@@ -1,0 +1,13 @@
+# Site-wide variables.
+title: Formn Docs
+
+# Build settings
+markdown: kramdown
+theme: just-the-docs
+
+# Just the Docs config.
+search_enabled: true
+
+aux_links:
+  "Formn on GitHub":
+    - "//github.com/benbotto/formn"
