@@ -16,42 +16,42 @@ the data-mapper pattern.
 It takes queries that look like this:
 
 ```sql
-SELECT  u.userID, u.firstName, u.lastName,
+SELECT  p.personID, p.firstName, p.lastName,
         pn.phoneNumberID, pn.phoneNumber
-FROM    users u
-INNER JOIN phone_numbers pn ON u.userID = pn.userID
-ORDER BY u.firstName, u.lastName
+FROM    people p
+INNER JOIN phone_numbers pn ON p.personID = pn.personID
+ORDER BY p.firstName, p.lastName
 ```
 
 and makes them look like this:
 
 ```typescript
-const query: Select<User> = dataContext
-  .from(User, 'u')
-  .innerJoin(PhoneNumber, 'pn', 'u.phoneNumbers')
+const query: Select<Person> = dataContext
+  .from(Person, 'u')
+  .innerJoin(PhoneNumber, 'pn', 'p.phoneNumbers')
   .select(
-    'u.id', 'u.firstName', 'u.lastName',
+    'p.id', 'p.firstName', 'p.lastName',
     'pn.id', 'pn.phoneNumber')
-  .orderBy('u.firstName', 'u.lastName')
+  .orderBy('p.firstName', 'p.lastName')
 
-const users: User[] = await query
+const people: Person[] = await query
   .execute();
 ```
 
 It maps tabular, relational data that look like this:
 
-| userID | firstName | lastName | phoneNumberID | phoneNumber  |
-|--------|-----------|----------|---------------|--------------|
-| 1      | Joe       | Shmo     | 1             | 530-307-8810 |
-| 1      | Joe       | Shmo     | 2             | 916-200-1440 |
-| 1      | Joe       | Shmo     | 3             | 916-293-4667 |
-| 2      | Rand      | AlThore  | 4             | 666-451-4412 |
+| personID | firstName | lastName | phoneNumberID | phoneNumber  |
+|----------|-----------|----------|---------------|--------------|
+| 1        | Joe       | Shmo     | 1             | 530-307-8810 |
+| 1        | Joe       | Shmo     | 2             | 916-200-1440 |
+| 1        | Joe       | Shmo     | 3             | 916-293-4667 |
+| 2        | Rand      | AlThore  | 4             | 666-451-4412 |
 
 to normalized entities that look like this:
 
 ```javascript
 [
-  User {
+  Person {
     id: 1,
     firstName: 'Joe',
     lastName: 'Shmo',
@@ -70,7 +70,7 @@ to normalized entities that look like this:
       }
     ]
   },
-  User {
+  Person {
     id: 2,
     firstName: 'Rand',
     lastName: 'AlThore',
