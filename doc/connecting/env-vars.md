@@ -8,8 +8,8 @@ nav_order: 3
 # Env Vars
 
 Formn provides a helper class,
-[ConnectionFileReader](../../api-doc/latest/classes/connectionsfilereader.html),
-that can be used to read and validate a `connections.json` file.  The
+[ConnectionsFileReader](../../api-doc/latest/classes/connectionsfilereader.html),
+that can be used to read and validate a `connections.json` file.  Its
 [readConnectionOptions](../../api-doc/latest/classes/connectionsfilereader.html#readconnectionoptions)
 method takes a path to a `connections.json` file, and returns an array of
 [ConnectionOptions](../../api-doc/latest/classes/connectionoptions.html).
@@ -51,10 +51,10 @@ There are a few key differences from the [last example](./establishing-a-connect
 1. [readConnectionOptions](../../api-doc/latest/classes/connectionsfilereader.html#readconnectionoptions)
 takes the path to a `connections.json` file.  If the path is relative, it's
 assumed to be relative to the current working directory, which is likely the
-root of your application.  In the last example the `connections.json` file was
-simply read using `require`.
+root of your application.  In the [last example](./establishing-a-connection)
+the `connections.json` file was simply read using `require`.
 2. [readConnectionOptions](../../api-doc/latest/classes/connectionsfilereader.html#readconnectionoptions)
-**returns an array** of
+returns an **array** of
 [ConnectionOptions](../../api-doc/latest/classes/connectionoptions.html).  Some
 applications need to connect to multiple databases, so a `connections.json`
 file can define an array of connection details.
