@@ -3,7 +3,7 @@ layout: default
 title: Connecting
 nav_order: 2
 has_children: true
-permalink: /docs/connecting
+permalink: /doc/connecting
 ---
 
 # Connecting
