@@ -20,7 +20,7 @@ npm install -g formn-cli
 ```
 
 You'll also need to define a `connections.json` file as described in the
-[Connecting](../connecting) section.  Formn generates models using database
+[Connecting](../connecting/) section.  Formn generates models using database
 metadata defined in the `INFORMATION_SCHEMA` tables, so the credentials
 supplied in the `connections.json` file must have sufficient permission.
 

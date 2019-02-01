@@ -7,14 +7,24 @@ nav_order: 1
 
 # Insert a Record
 
-Like [connecting](../connecting), query operations in Formn originate with a
-[DataContext](../../api-doc/latest/classes/datacontext.html) instance.  The
+Like [connecting](../connecting/), query operations in Formn originate with a
+[DataContext](../../api-doc/latest/classes/datacontext.html) instance.  (See
+the [DataContext](../datacontext/) section.) The
 [DataContext.insert](../../api-doc/latest/classes/datacontext.html#insert)
 method is used to insert a model instance into the database.
 
-First, instantiate and populate an instance of a model.  For example, let's add
-a
+### Insert a Person Instance
+
+Back in the [Getting Started](../getting-started/) section we [set up an
+example database](../getting-started/tutorial-database-setup.html).  Then, in
+the [Models](../models/) section, we defined a
+[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+entity class.  Let's walk through the process of inserting a
 [Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts).
+
+First, instantiate and populate a
+[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+(`president` below).
 
 ```typescript
 const president = new Person();
@@ -40,8 +50,10 @@ const query: Insert<Person> = dataContext.insert(Person, president);
 
 [Insert](../../api-doc/latest/classes/insert.html) _is a_ type of
 [Query](../../api-doc/latest/classes/query.html), and, like all Formn queries,
-you can call the [toString](../../api-doc/latest/classes/query.html#toString)
-method to see the underlying SQL that will Formn will use.
+you can call the [toString](../../api-doc/latest/classes/query.html#tostring)
+method to see the underlying SQL associated with the
+[Query](../../api-doc/latest/classes/query.html) instance.  This method is
+useful for logging and debugging purposes.
 
 ```typescript
 console.log(query.toString());

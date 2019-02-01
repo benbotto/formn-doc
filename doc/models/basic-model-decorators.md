@@ -20,7 +20,7 @@ in the [next section](./relationships.html).
 
 ### Table
 
-Back in the [Getting Started](../getting-started) section we [defined a
+Back in the [Getting Started](../getting-started/) section we [defined a
 `people`
 table](../getting-started/tutorial-database-setup.html#manual-initialization).
 Let's make a Formn model for that table.

@@ -1,12 +1,14 @@
 ---
 layout: default
 title: Creating
-nav_order: 4
+nav_order: 6
 has_children: true
-permalink: /doc/Creating
+permalink: /doc/creating/
 ---
 
 # Creating
 
-The Creating section deals with inserting entities into the database.
+This section deals with inserting entities into the database.  It assumes
+familiarity with the [Getting Started](../getting-started/),
+[DataContext](../datacontext/), and [Models](../models/) sections.
 

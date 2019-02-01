@@ -7,15 +7,10 @@ nav_order: 2
 
 # Establishing a Connection
 
-Formn is similar to LINQ to SQL in that most database operations are done via a
-[DataContext](../../api-doc/latest/classes/datacontext.html) instance.  There
-is one [DataContext](../../api-doc/latest/classes/datacontext.html)
-implementation per supported database flavor.  For example, for a MySQL
-database you would use a
-[MySQLDataContext](../../api-doc/latest/classes/mysqldatacontext.html).  Each
+As discussed in the [DataContext](../datacontext/) section, each
 [DataContext](../../api-doc/latest/classes/datacontext.html) implementation
 exposes a [connect](../../api-doc/latest/classes/datacontext.html#connect)
-method that takes a single
+method.  It takes a single
 [ConnectionOptions](../../api-doc/latest/classes/connectionoptions.html)
 parameter.  Assuming you've followed the tutorial and defined your connection
 options in a root-level `connections.json` object (see the [Connection
@@ -55,6 +50,6 @@ The above example can be found in the formn-example repository under
 Run it with ts-node:
 
 ```
-formn-example$ npx ts-node ./src/connection/connect.ts
+npx ts-node ./src/connection/connect.ts
 ```
 
