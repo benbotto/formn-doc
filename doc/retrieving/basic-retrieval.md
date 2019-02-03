@@ -56,3 +56,113 @@ const people: Person[] = await query
   .execute();
 ```
 
+### Full Example
+
+A complete example follows.  It's available in the `formn-example` repository under
+[src/retrieve/retrieve-all-people.ts](https://github.com/benbotto/formn-example/blob/1.4.1/src/retrieve/retrieve-all-people.ts).
+
+```typescript
+import { inspect } from 'util';
+
+import { MySQLDataContext, ConnectionOptions, Select } from 'formn';
+
+import { Person } from '../entity/person.entity';
+
+async function main() {
+  const connOpts: ConnectionOptions = require('../../connections.json');
+  const dataContext = new MySQLDataContext();
+
+  try {
+    await dataContext.connect(connOpts);
+
+    // Create a Select query, which will pull all People records from the
+    // people table.
+    const query: Select<Person> = dataContext
+      .from(Person)
+      .select();
+
+    // Log the generated SQL.
+    console.log(query.toString());
+
+    // Execute the query to get all Person records.
+    const people: Person[] = await query
+      .execute();
+
+    console.log(inspect(people, {depth: null, compact: false}));
+
+    await dataContext.end();
+  }
+  catch(err) {
+    console.error(err);
+  }
+}
+
+main();
+```
+
+Run it using `ts-node`.
+
+```
+npx ts-node ./src/retrieve/retrieve-all-people.ts
+```
+
+The output will look similar to the following.
+
+```
+SELECT  `people`.`createdOn` AS `people.createdOn`,
+        `people`.`firstName` AS `people.firstName`,
+        `people`.`lastName` AS `people.lastName`,
+        `people`.`personID` AS `people.id`
+FROM    `people` AS `people`
+[
+  Person {
+    id: 1,
+    createdOn: 2019-01-29T02:57:06.000Z,
+    firstName: 'Joe',
+    lastName: 'Shmo'
+  },
+  Person {
+    id: 2,
+    createdOn: 2019-01-29T02:57:06.000Z,
+    firstName: 'Rand',
+    lastName: 'AlThore'
+  },
+  Person {
+    id: 3,
+    createdOn: 2019-01-29T02:57:06.000Z,
+    firstName: 'Holly',
+    lastName: 'Davis'
+  },
+  Person {
+    id: 4,
+    createdOn: 2019-01-29T02:57:06.000Z,
+    firstName: 'Jenny',
+    lastName: 'Mather'
+  },
+  Person {
+    id: 5,
+    createdOn: 2019-01-29T03:05:14.000Z,
+    firstName: 'Mickey',
+    lastName: 'Mouse'
+  },
+  Person {
+    id: 6,
+    createdOn: 2019-01-29T03:06:01.000Z,
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  },
+  Person {
+    id: 7,
+    createdOn: 2019-01-29T03:08:02.000Z,
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  },
+  Person {
+    id: 8,
+    createdOn: 2019-01-31T04:13:44.000Z,
+    firstName: 'Abe',
+    lastName: 'Lincoln'
+  }
+]
+```
+
