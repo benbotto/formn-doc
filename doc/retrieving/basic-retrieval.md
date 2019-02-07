@@ -150,18 +150,6 @@ FROM    `people` AS `people`
     createdOn: 2019-01-29T03:06:01.000Z,
     firstName: 'Abe',
     lastName: 'Lincoln'
-  },
-  Person {
-    id: 7,
-    createdOn: 2019-01-29T03:08:02.000Z,
-    firstName: 'Abe',
-    lastName: 'Lincoln'
-  },
-  Person {
-    id: 8,
-    createdOn: 2019-01-31T04:13:44.000Z,
-    firstName: 'Abe',
-    lastName: 'Lincoln'
   }
 ]
 ```
