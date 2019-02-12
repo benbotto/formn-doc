@@ -7,38 +7,54 @@ nav_order: 4
 
 # Conditions
 
-Formn uses a domain-specific language for WHERE and ON conditions, and
-conditions are lexed, parsed, and compiled.  This approach is pretty flexible,
-as it lets developers create conditions on the fly, or even accept condition
-filters via an API feed.
-
-Condition expressions are given in prefix notation rather than infix, so if
-you've used MongoDB the conditions will look familiar.  Let's take a look at
-some examples.
+The easiest way to create conditions with Formn is to use the
+[ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html) class.
+You build a condition, and then pass it to the
+[FromAdapter.where](../../api-doc/latest/classes/fromadapter.html#where) method
+to filter a query.
 
 ### Basic Comparisons
 
-The [FromAdapter.where](../../api-doc/latest/classes/fromadapter.html#where)
-method is used to filter a query.  It takes two parameters: a condition object,
-and (optionally) any query parameters used in the condition.
+The [ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html) class
+provides these basic comparison functions.
 
-A basic comparison takes the form:
+* [eq](../../api-doc/latest/classes/conditionbuilder.html#eq): Equal (`=`)
+  comparison.
+* [neq](../../api-doc/latest/classes/conditionbuilder.html#neq): Not equal
+  (`<>`) comparison.
+* [lt](../../api-doc/latest/classes/conditionbuilder.html#lt): Less than (`<`)
+  comparison.
+* [lte](../../api-doc/latest/classes/conditionbuilder.html#lte): Less than or
+  equal to (`<=`) comparison.
+* [gt](../../api-doc/latest/classes/conditionbuilder.html#gt): Greater than
+  (`>`) comparison.
+* [gte](../../api-doc/latest/classes/conditionbuilder.html#gte): Greater than
+  or equal to (`>=`) comparison.
+* [like](../../api-doc/latest/classes/conditionbuilder.html#like): Like
+  (`LIKE`) comparison.
+* [notLike](../../api-doc/latest/classes/conditionbuilder.html#notlike): Not
+  like (`NOT LIKE`) comparison.
+* [in](../../api-doc/latest/classes/conditionbuilder.html#in): In (`IN (...)`)
+  comparison.
+* [notIn](../../api-doc/latest/classes/conditionbuilder.html#notin): Not in
+  (`NOT IN (...)`) comparison.
+* [isNull](../../api-doc/latest/classes/conditionbuilder.html#isnull): Is null
+  (`IS NULL`) comparison.
+* [isNotNull](../../api-doc/latest/classes/conditionbuilder.html#isnotnull): Is
+  not null (`IS NOT NULL`) comparison.
 
-```
-{<comparison-operator>: {<model-property> : <value>}}
-```
-
-The basic comparison operators are `$eq`, `$neq`, `$lt`, `$lte`, `$gt`, `$gte`,
-`$like`, and `$notlike`.  For example, if we wanted to find all 
-[Person](https://github.com/benbotto/formn-example/blob/1.7.0/src/entity/person.entity.ts)
-records with a `firstName` of "Joe," we would use the `$eq` operator.
+In a nutshell, you build a condition, then pass the result to the
+[FromAdapter.where](../../api-doc/latest/classes/fromadapter.html#where)
+method.  For example, if we wanted to find all
+[Person](https://github.com/benbotto/formn-example/blob/1.8.0/src/entity/person.entity.ts)
+records with a `firstName` of "Joe," we would use the
+[eq](../../api-doc/latest/classes/conditionbuilder.html#eq) method.
 
 ```typescript
 const query: Select<Person> = dataContext
   .from(Person, 'p')
   .where(
-    {$eq: {'p.firstName' : ':myFirstName'}},
-    {myFirstName: 'Joe'})
+    cb.eq('p.firstName', ':myFirstName', 'Joe'))
   .select();
 
 // Resulting condition: WHERE   `p`.`firstName` = :myFirstName
@@ -50,8 +66,7 @@ Or, if we wanted to find all people created after New Years, 2019.
 const query: Select<Person> = dataContext
   .from(Person, 'p')
   .where(
-    {$gt: {'p.createdOn' : ':newyears'}},
-    {newyears: new Date('2019-01-01')})
+    cb.gt('p.createdOn', ':newyears', new Date('2019-01-01')))
   .select();
 
 // Resulting condition: WHERE   `p`.`createdOn` > :newyears
@@ -59,59 +74,39 @@ const query: Select<Person> = dataContext
 
 ### Logical (Aggregate) Conditions
 
-Conditions can be combined using the `$and` and `$or` logical operators.  These
-types of conditions take the form:
-
-```
-{<logical-operator>: [<condition>, ...]}
-```
-
-That is, an operator proceeded by an array of conditions.
-
-So let's say we want to find all
-[Person](https://github.com/benbotto/formn-example/blob/1.7.0/src/entity/person.entity.ts)
-records that have a "j" in their first or last name.
+Conditions can be combined using the
+[and](../../api-doc/latest/classes/conditionbuilder.html#and) and
+[or](../../api-doc/latest/classes/conditionbuilder.html#or) methods.  Let's say
+we want to find all
+[Person](https://github.com/benbotto/formn-example/blob/1.8.0/src/entity/person.entity.ts)
+records that have a "j" in the first or last name.
 
 ```typescript
 const query: Select<Person> = dataContext
   .from(Person, 'p')
   .where(
-    {
-      $or: [
-        {$like: {'p.firstName': ':letter'}},
-        {$like: {'p.lastName': ':letter'}}
-      ]
-    },
-    {letter: '%j%'})
+    cb.or(
+      cb.like('p.firstName', ':letter', '%j%'),
+      cb.like('p.lastName', ':letter', '%j%')))
   .select();
 
 // Resulting condition: WHERE   (`p`.`firstName` LIKE :letter OR `p`.`lastName` LIKE :letter)
 ```
 
-Above, two `$like` comparisons are `OR`'d together.  Now let's find people with
-a "j" and an "r" in the name (e.g. "Jenny Mather").
+Above, two basic `LIKE` comparisons are `OR`'d together.  Now let's find people
+with a "j" and an "r" in the first or last name (e.g. "Jenny Mather").
 
 ```typescript
 const query: Select<Person> = dataContext
   .from(Person, 'p')
   .where(
-    {
-      $and: [
-        {
-          $or: [
-            {$like: {'p.firstName': ':letter1'}},
-            {$like: {'p.lastName': ':letter1'}}
-          ]
-        },
-        {
-          $or: [
-            {$like: {'p.firstName': ':letter2'}},
-            {$like: {'p.lastName': ':letter2'}}
-          ]
-        }
-      ]
-    },
-    {letter1: '%j%', letter2: '%r'})
+    cb.and(
+      cb.or(
+        cb.like('p.firstName', ':letter1', '%j%'),
+        cb.like('p.lastName', ':letter1', '%j%')),
+      cb.or(
+        cb.like('p.firstName', ':letter2', '%r%'),
+        cb.like('p.lastName', ':letter2', '%r%'))))
   .select();
 
 // Resulting condition:
@@ -122,21 +117,86 @@ const query: Select<Person> = dataContext
 Obviously, Formn places parentheses around logically-grouped conditions so
 that the operator precedence is correct.
 
-### Condition Language Spec
+### Conditions from Objects (Advanced)
 
-As mentioned above, Formn conditions follow a formal spec.  The BNF can be
-found
+The [FromAdapter.where](../../api-doc/latest/classes/fromadapter.html#where)
+method is overloaded.  Rather than using the
+[ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html) class,
+you can pass two parameters:
+
+* A condition object.
+* A parameter object that contains key-value pairs.  Each key corresponds to a
+  parameter in the condition object.
+
+The [ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html)
+class just builds condition objects using a simple interface.  After building a
+condition, you can see the resulting condition object using the
+[ParameterizedCondition.getCond](../../api-doc/latest/classes/parameterizedcondition.html#getcond)
+method.
+
+```typescript
+const pCond = cb.and(
+  cb.or(
+    cb.like('p.firstName', ':letter1', '%j%'),
+    cb.like('p.lastName', ':letter1', '%j%')),
+  cb.or(
+    cb.like('p.firstName', ':letter2', '%r%'),
+    cb.like('p.lastName', ':letter2', '%r%')));
+
+console.log(inspect(pCond.getCond(), {depth: null, compact: false}));
+
+/*
+{
+  '$and': [
+    {
+      '$or': [
+        {
+          '$like': {
+            'p.firstName': ':letter1'
+          }
+        },
+        {
+          '$like': {
+            'p.lastName': ':letter1'
+          }
+        }
+      ]
+    },
+    {
+      '$or': [
+        {
+          '$like': {
+            'p.firstName': ':letter2'
+          }
+        },
+        {
+          '$like': {
+            'p.lastName': ':letter2'
+          }
+        }
+      ]
+    }
+  ]
+}
+*/
+```
+
+The objects are in prefix notation, similar to MongoDB's conditions, and they
+follow a formal language specification.  That spec can be found
 [here](https://github.com/benbotto/formn/blob/5.0.0/src/query/condition/condition-bnf.txt).
+
+Using condition objects, one could, for example, accept dynamic conditions via
+an API, or build complex conditions on the fly.
 
 ### Full Example
 
 You can see the above example in the formn-example repository under
-[src/retrieve/conditions.ts](https://github.com/benbotto/formn-example/blob/1.7.0/src/retrieve/conditions.ts).
+[src/retrieve/conditions.ts](https://github.com/benbotto/formn-example/blob/1.8.0/src/retrieve/conditions.ts).
 
 ```typescript
 import { inspect } from 'util';
 
-import { MySQLDataContext, ConnectionOptions, Select } from 'formn';
+import { MySQLDataContext, ConnectionOptions, Select, ConditionBuilder } from 'formn';
 
 import { Person } from '../entity/person.entity';
 
@@ -147,27 +207,20 @@ async function main() {
   try {
     await dataContext.connect(connOpts);
 
+    // The ConditionBuilder class is used to build WHERE or ON conditions.
+    const cb = new ConditionBuilder();
+
     // People with a "j" and an "r" in their name, like Jenny Mather.
     const query: Select<Person> = dataContext
       .from(Person, 'p')
       .where(
-        {
-          $and: [
-            {
-              $or: [
-                {$like: {'p.firstName': ':letter1'}},
-                {$like: {'p.lastName': ':letter1'}}
-              ]
-            },
-            {
-              $or: [
-                {$like: {'p.firstName': ':letter2'}},
-                {$like: {'p.lastName': ':letter2'}}
-              ]
-            }
-          ]
-        },
-        {letter1: '%j%', letter2: '%r'})
+        cb.and(
+          cb.or(
+            cb.like('p.firstName', ':letter1', '%j%'),
+            cb.like('p.lastName', ':letter1', '%j%')),
+          cb.or(
+            cb.like('p.firstName', ':letter2', '%r%'),
+            cb.like('p.lastName', ':letter2', '%r%'))))
       .select();
 
     console.log(query.toString());
