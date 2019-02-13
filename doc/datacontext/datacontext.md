@@ -23,8 +23,12 @@ commonly used.
   a database..
 * [insert](../../api-doc/latest/classes/datacontext.html#insert): Insert a
   [model](../models/) into the database.
-* [from](../../api-doc/latest/classes/datacontext.html#from): Select, update,
-  or delete records **from** the database.
+* [from](../../api-doc/latest/classes/datacontext.html#from): Select **from**
+  the database, or batch update or delete records **from** the database.
+* [update](../../api-doc/latest/classes/datacontext.html#update): Update a 
+  [model](../models/).
+* [delete](../../api-doc/latest/classes/datacontext.html#delete): Delete a 
+  [model](../models/).
 * [beginTransaction](../../api-doc/latest/classes/datacontext.html#begintransaction):
   Start a database transaction.
 
