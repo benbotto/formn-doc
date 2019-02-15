@@ -31,7 +31,8 @@ in the same way: using the
 along with the
 [ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html) class.
 (You can also use join operations, as described in
-[Joining](../retrieving/joining.html).)
+[Joining](../retrieving/joining.html) and [Batch
+Deleting](../deleting/batch-deleting.html).)
 
 When we created the [example
 database](../getting-started/tutorial-database-setup.html), we added `type`
