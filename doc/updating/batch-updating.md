@@ -21,7 +21,7 @@ instance.  That class has an
 [update](../../api-doc/latest/classes/fromadapter.html#update) method that can
 be used to perform batch updates.
 
-### Update With a WHERE Clause
+### Update With a Where Clause
 
 In the last chapter, [Conditions](../retrieving/conditions.html) were covered.
 Because both retrieving and batch updating share a common inteface--namely
