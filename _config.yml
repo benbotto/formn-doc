@@ -4,6 +4,11 @@ title: Formn Docs
 # Build settings
 markdown: kramdown
 theme: just-the-docs
+exclude:
+  - docker-compose.yml
+  - docker-compose.build.yml
+  - Gemfile
+  - Gemfile.lock
 
 # Just the Docs config.
 search_enabled: true
