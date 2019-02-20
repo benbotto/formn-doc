@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>formn</title>
+	<title>Formn</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">formn</a>
+					<a href="index.html" class="title">Formn</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -52,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> formn</h1>
+			<h1> Formn</h1>
 		</div>
 	</div>
 </header>
@@ -60,59 +60,14 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>Work in progress.</p>
-				<h3 id="development-notes">Development Notes</h3>
-				<h5 id="development-environment">Development Environment</h5>
-				<p>Two docker containers are used during development:</p>
-				<ol>
-					<li><code>formn-dev</code>: An Ubuntu Bionic container with Node.js Dubnium, with the code
-						(this directory) mounted on <code>/home/node/dev/</code>.  This container has all the
-						dependencies required to run the unit tests, build the application, and
-					generate documentation.</li>
-					<li><code>formn-db</code>: A Percona 5.7 container with a <code>formn_test_db</code> database.  This
-						container isn&#39;t strictly necessary for development, but while coding it&#39;s
-						often useful to test against an actual database.  The tables mimic the
-						entity definitions in <code>src/test/entity/</code>.  The database data and schema are
-					defined in <code>docker-entrypoint-initdb.d/</code>.</li>
-				</ol>
-				<p>To bring up the development environment, use Docker Compose: <code>docker-compose up
--d</code>.  The two containers can be seen by running <code>docker ps -a</code>.  Bring up a
-					bash shell in the dev environment with <code>docker-compose exec dev bash</code>.  From bash,
-				install the required dependencies using yarn:</p>
-				<pre><code><span class="hljs-built_in">cd</span> dev
-yarn</code></pre><h5 id="tasks">Tasks</h5>
-				<p>Tasks such as building, testing, and generating documentation are defined in package.json as npm scripts.</p>
-				<ul>
-					<li><code>npm run build</code>: Build the application to ES6.  The build will be in
-					<code>dist</code>.</li>
-					<li><code>npm run doc</code>: Generate documentation for the project.  The documentation
-					is created with TypeDoc and is located in the <code>doc</code> folder.</li>
-					<li><code>npm run test</code>: Run the unit tests.  Unit tests are written for Jasmine.</li>
-					<li><code>npm run test:debug</code>: Run the unit tests and break immediately.  From
-						Chrome, navigate to <code>chrome://inspect</code> to debug the application.  (Using a
-					<code>debugger</code> statement somewhere in the code is helpful.)</li>
-					<li><code>npm run clean</code>: Remove the <code>dist</code> and <code>doc</code> folders.</li>
-					<li><code>npm run watch:test</code>: Run the unit tests any time a ts file changes.
-					Watching is done via chokidar-cli.</li>
-					<li><code>npm run watch:doc</code>: Generate documentation any time a ts file changes.</li>
-				</ul>
-				<h5 id="unit-tests">Unit Tests</h5>
-				<p>Tests are written for Jasmine.  Each test suite lives alongside its counterpart
-					file (for example, <code>src/datamapper/schema.ts</code> is accompanied by
-					<code>src/datamapper/schema.spec.ts</code>).  There are also some helper scripts in
-				<code>src/test/</code> that are used to aid in the testing process.</p>
-				<ul>
-					<li><code>test/query/</code>: One-off queries that were used to generate database results
-					for testing against actual datasets.</li>
-					<li><code>test/entity/*.entity.ts</code>: Table definitions used when testing.  These
-					definitions match the <code>formn_test_db</code> database.</li>
-					<li><code>test/entity/database.ts</code>: Exports an <code>initDB()</code> function.  With formn,
-						entities are defined using decorators, and these decorators create metadata
-						about tables and columns.  Unit tests sometimes change these metadata
-						definitions to test different scenarios.  <code>initDB()</code> manually decorates
-						entity classes to prevent state from carrying over from one test to the
-					next.  It&#39;s generally called from a test&#39;s <code>beforeEach</code> setup.</li>
-				</ul>
+				<h1 id="formn">Formn</h1>
+				<p>Formn, pronounced foreman, is an object-relational mapper for Node.js. What&#39;s
+				the &quot;F&quot; stand for? It depends on your mood.</p>
+				<p>It&#39;s a fast, database-first ORM for projects written in TypeScript, and it uses
+				the data-mapper pattern.</p>
+				<p>Check out the
+					<a href="https://benbotto.github.io/doc/node-data-mapper/5.x.x/">documentation</a>.  It
+				has a getting started guide, tutorials, and more.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

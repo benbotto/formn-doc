@@ -10,4 +10,6 @@ search_enabled: true
 
 aux_links:
   "Formn on GitHub":
-    - "//github.com/benbotto/formn"
+    - "//github.com/benbotto/formn/tree/master"
+  "API Docs":
+    - "/api-doc/latest/globals.html"
