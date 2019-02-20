@@ -10,6 +10,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+baseurl: "/doc/formn/5.x.x"
+
 # Just the Docs config.
 search_enabled: true
 
@@ -17,4 +19,4 @@ aux_links:
   "Formn on GitHub":
     - "//github.com/benbotto/formn/tree/master"
   "API Docs":
-    - "/api-doc/latest/globals.html"
+    - "/doc/formn/5.x.x/api-doc/latest/globals.html"
