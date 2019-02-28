@@ -20,7 +20,7 @@ now note that the following
 commonly used.
 
 * [connect](../../api-doc/latest/classes/datacontext.html#connect): Connect to
-  a database..
+  a database.
 * [insert](../../api-doc/latest/classes/datacontext.html#insert): Insert a
   [model](../models/) into the database.
 * [from](../../api-doc/latest/classes/datacontext.html#from): Select **from**
