@@ -28,7 +28,7 @@ and makes them look like this:
 
 ```typescript
 const query: Select<Person> = dataContext
-  .from(Person, 'u')
+  .from(Person, 'p')
   .innerJoin(PhoneNumber, 'pn', 'p.phoneNumbers')
   .select(
     'p.id', 'p.firstName', 'p.lastName',
