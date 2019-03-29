@@ -24,16 +24,17 @@ import { Table, Column } from 'formn';
 
 @Table({name: 'phone_numbers'})
 export class PhoneNumber {
-  @Column({name: 'phoneNumberID', isPrimary: true, isGenerated: true, isNullable: false})
+  @Column({name: 'phoneNumberID', isPrimary: true, isGenerated: true,
+    isNullable: false, sqlDataType: 'int'})
   id: number;
 
-  @Column({name: 'personID', isNullable: false})
+  @Column({name: 'personID', isNullable: false, sqlDataType: 'int'})
   personId: number;
 
-  @Column({isNullable: false, maxLength: 255})
+  @Column({isNullable: false, maxLength: 255, sqlDataType: 'varchar'})
   phoneNumber: string;
 
-  @Column({maxLength: 255})
+  @Column({maxLength: 255, sqlDataType: 'varchar'})
   type: string;
 }
 ```

@@ -61,28 +61,29 @@ import { Table, Column } from 'formn';
 
 @Table({name: 'people'})
 export class Person {
-  @Column({name: 'personID', isPrimary: true, isGenerated: true, isNullable: false})
+  @Column({name: 'personID', isPrimary: true, isGenerated: true,
+    isNullable: false, sqlDataType: 'int'})
   id: number;
 
-  @Column({maxLength: 255})
+  @Column({maxLength: 255, sqlDataType: 'varchar'})
   firstName: string;
 
-  @Column({maxLength: 255})
+  @Column({maxLength: 255, sqlDataType: 'varchar'})
   lastName: string;
 
-  @Column({hasDefault: true, isNullable: false})
+  @Column({hasDefault: true, isNullable: false, sqlDataType: 'timestamp'})
   createdOn: Date;
 }
 ```
 
-#### Aliasing Column Names
+### Aliasing Column Names
 
 Database column names and Formn model property names can differ.  Just like we
 aliased the `people` table as `Person`, in the above class the
 `people.personID` column has been aliased as `id`.  Behind the scenes, Formn
 will map `Person.id` to/from `people.personID`.
 
-#### Primary Keys
+### Primary Keys
 
 Every Formn model _must_ have a primary key defined.  A primary key is made up
 of one or more [Column](../../api-doc/latest/globals.html#column)-decorated
@@ -93,18 +94,18 @@ properties.  In the `people` table, the primary key is defined on the
 column is also auto-incrementing (it's generated); hence, the `isGenerated`
 option is enabled.
 
-#### Max Length
+### Max Length
 
 When we [defined the people
 table](../getting-started/tutorial-database-setup.html#manual-initialization),
 we defined a maximum character length for the `firstName` and `lastName`
 columns.  That restriction is echoed above with the `maxLength` option, which
-is useful for validation purposes.
+is useful for [validation](../validation/) purposes.
 
-#### Default Values
+### Default Values
 
 Database side, `people.createdOn` is defined with a default of
-`CURRENT_TIMESTAMP`, and it's not nullable.  For validation purposes, we supply
-the `hasDefault` and `isNullable` options to `createdOn`'s
+`CURRENT_TIMESTAMP`, and it's not nullable.  For [validation](../validation/)
+purposes, we supply the `hasDefault` and `isNullable` options to `createdOn`'s
 [Column](../../api-doc/latest/globals.html#column) decorator.
 
