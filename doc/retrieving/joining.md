@@ -17,15 +17,15 @@ metadata to join the tables together.
 For example, back when we [defined our
 models](../models/generating-models.html), we specified a one-to-many
 relationship between
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 and
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/phone-number.entity.ts),
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts),
 and a many-to-one relationship in the opposite direction.  With those
 relationships in place, we can pull all the
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records along with each
-[Person's](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
-[PhoneNumbers](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/phone-number.entity.ts).
+[Person's](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
+[PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts).
 We do that with one of the
 [FromAdapter's](../../api-doc/latest/classes/fromadapter.html) join methods:
 [leftOuterJoin](../../api-doc/latest/classes/fromadapter.html#leftouterjoin) or
@@ -40,11 +40,11 @@ const query: Select<Person> = dataContext
 
 That says to join from `people` to `phone_numbers`, using the relationship
 defined on the `p.phoneNumbers` property.  You'll get back all
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records, and each
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 will have an array of
-[PhoneNumbers](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/phone-number.entity.ts).
+[PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts).
 
 If you wanted to go the other direction, joining from `phone_numbers` to
 `people`:
@@ -57,17 +57,17 @@ const query: Select<PhoneNumber> = dataContext
 ```
 
 which would give you all
-[PhoneNumbers](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/phone-number.entity.ts),
+[PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts),
 each with a
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 instance.
 
 ### Full Example
 
 Both examples presented above are available in the formn-example repository.  Take a look at
-[src/retrieve/join-people-to-phone-numbers.ts](https://github.com/benbotto/formn-example/blob/1.9.0/src/retrieve/join-people-to-phone-numbers.ts)
+[src/retrieve/join-people-to-phone-numbers.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/join-people-to-phone-numbers.ts)
 and
-[src/retrieve/join-phone-numbers-to-people.ts](https://github.com/benbotto/formn-example/blob/1.9.0/src/retrieve/join-phone-numbers-to-people.ts).
+[src/retrieve/join-phone-numbers-to-people.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/join-phone-numbers-to-people.ts).
 The former is presented below.
 
 ```typescript

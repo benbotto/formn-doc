@@ -22,7 +22,7 @@ sections.
 ### Retrieve All From a Single Table
 
 Let's say you want to select all
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records from the `people` table that we defined in the [Getting
 Started](../getting-started/tutorial-database-setup.html) section.  To do so,
 you would call the
@@ -48,7 +48,7 @@ console.log(query.toString());
 
 And we can [execute](../../api-doc/latest/classes/query.html#execute) the query
 to retrieve the
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records.
 
 ```typescript
@@ -59,7 +59,7 @@ const people: Person[] = await query
 ### Full Example
 
 A complete example follows.  It's available in the `formn-example` repository under
-[src/retrieve/retrieve-all-people.ts](https://github.com/benbotto/formn-example/blob/1.4.1/src/retrieve/retrieve-all-people.ts).
+[src/retrieve/retrieve-all-people.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/retrieve-all-people.ts).
 
 ```typescript
 import { inspect } from 'util';

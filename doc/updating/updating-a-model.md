@@ -30,7 +30,7 @@ the query.
 ### Update a Person Instance
 
 Here's how one could update the `firstName` of a
-[Person](https://github.com/benbotto/formn-example/blob/1.10.1/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 record.
 
 ```typescript
@@ -64,7 +64,7 @@ this restriction.
 ### Full Example
 
 The example shown above is present in the formn-example repository under
-[src/update/update-person.ts](https://github.com/benbotto/formn-example/blob/1.10.1/src/update/update-person.ts).
+[src/update/update-person.ts](https://github.com/benbotto/formn-example/blob/master/src/update/update-person.ts).
 
 ```typescript
 import {

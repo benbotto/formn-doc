@@ -10,16 +10,16 @@ nav_order: 2
 In the [last section](validation-classes.html) we gave an overview of Formn's
 built-in validation classes.  Obviously, validation differs between create,
 update, and delete operations.  For example, when inserting a
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 instance, the `phoneNumber` property is required: it cannot be `null`; it
 cannot be `undefined`.  On the other hand, when updating a
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts),
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts),
 the `phoneNumber` property can be omitted: the user may want to update
 partially, e.g. just change the `type`.
 
 The specific validation rules for each operation are laid out below.  Each has
 examples which reference the
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 class, shown here for convenience.
 
 ```typescript
@@ -63,7 +63,7 @@ Use this class before inserting records.
    (see below).
 
 The following object is not a valid
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 object because:
 
 1. `id` is associated with a generated column, and thus cannot be defined.
@@ -86,7 +86,7 @@ Use this class prior to updating a model by ID.
    (see below).
 
 The below object is not a valid
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 object because:
 
 1. `id` is not defined.
@@ -109,7 +109,7 @@ Use this class prior to deleting a model by ID.
 No other validation is applied.
 
 The following 
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 object cannot be deleted because:
 
 1. `id` is not defined.
@@ -142,7 +142,7 @@ useful in certain scenarios, such as making a custom model validator.
    described above.
 
 The following
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 object cannot be inserted because:
 
 1. `personId` has an invalid data type (not an integer).
@@ -156,7 +156,7 @@ const phone = {
 ```
 
 This
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 object cannot be updated because:
 
 1. `phoneNumber` is not a valid phone number.
@@ -171,9 +171,9 @@ const phone = {
 ### Full Example
 
 Each of the example objects presented above is taken from the [validation
-directory](http://github.com/benbotto/formn-example/blob/1.15.0/src/validation)
+directory](http://github.com/benbotto/formn-example/blob/master/src/validation)
 of the formn-example repository.  One of the examples,
-[src/validation/insert/generated-column-defined.ts](http://github.com/benbotto/formn-example/blob/1.15.0/src/validation/insert/generated-column-defined.ts),
+[src/validation/insert/generated-column-defined.ts](http://github.com/benbotto/formn-example/blob/master/src/validation/insert/generated-column-defined.ts),
 is shown below.
 
 ```typescript

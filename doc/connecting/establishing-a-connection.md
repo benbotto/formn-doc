@@ -46,7 +46,7 @@ main();
 ```
 
 The above example can be found in the formn-example repository under
-[`src/connection/connect.ts`](https://github.com/benbotto/formn-example/blob/1.0.0/src/connection/connect.ts).
+[`src/connection/connect.ts`](https://github.com/benbotto/formn-example/blob/master/src/connection/connect.ts).
 Run it with ts-node:
 
 ```

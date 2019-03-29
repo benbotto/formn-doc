@@ -51,13 +51,13 @@ part of the transaction; queries run against `dataContext` will not.
 
 There's an example in the formn-example repository that uses transactions.  It
 deletes all the
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.15.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 records for a
-[Person](https://github.com/benbotto/formn-example/blob/1.15.0/src/entity/person.entity.ts),
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts),
 and then inserts two new
-[PhoneNumbers](https://github.com/benbotto/formn-example/blob/1.15.0/src/entity/phone-number.entity.ts).
+[PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts).
 That example can be found under
-[src/transaction/replace-phone-numbers.ts](//github.com/benbotto/formn-example/blob/1.15.0/src/transaction/replace-phone-numbers.ts),
+[src/transaction/replace-phone-numbers.ts](//github.com/benbotto/formn-example/blob/master/src/transaction/replace-phone-numbers.ts),
 and it's repeated below for convenience.
 
 ```typescript

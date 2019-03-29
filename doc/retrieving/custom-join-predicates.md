@@ -16,9 +16,9 @@ that was covered in the [conditions](./conditions.html) section can be used to
 build a custom join condition.
 
 Let's say we want to pull all
-[Person](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records, along with their mobile
-[PhoneNumbers](https://github.com/benbotto/formn-example/blob/1.9.0/src/entity/phone-number.entity.ts),
+[PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts),
 if any.
 
 ```typescript
@@ -38,7 +38,7 @@ const query: Select<Person> = dataContext
 ### Full Example
 
 You'll find the above example in the formn-example repository under
-[src/retrieve/join-people-to-phone-numbers-custom-condition.ts](https://github.com/benbotto/formn-example/blob/1.9.0/src/retrieve/join-people-to-phone-numbers-custom-condition.ts).
+[src/retrieve/join-people-to-phone-numbers-custom-condition.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/join-people-to-phone-numbers-custom-condition.ts).
 
 ```typescript
 import { inspect } from 'util';

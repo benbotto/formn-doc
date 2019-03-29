@@ -18,12 +18,12 @@ method is used to insert a model instance into the database.
 Back in the [Getting Started](../getting-started/) section we [set up an
 example database](../getting-started/tutorial-database-setup.html).  Then, in
 the [Models](../models/) section, we defined a
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 entity class.  Let's walk through the process of inserting a
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts).
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts).
 
 First, instantiate and populate a
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 (`president` below).
 
 ```typescript
@@ -41,7 +41,7 @@ method.  It takes two parameters.
 1. An [EntityType](../../api-doc/latest/globals.html#entitytype), which is a
    [Table](../../api-doc/latest/globals.html#table)-decorated class.  (See the
    [Models](../models) section.)  We're inserting a
-   [Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts).
+   [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts).
 2. An instance of that [EntityType](../../api-doc/latest/globals.html#entitytype) (`president`).
 
 ```typescript
@@ -67,7 +67,7 @@ await query.execute();
 ```
 
 Since
-[Person](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/person.entity.ts)'s
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)'s
 primary key is generated (an auto-incrementing int), Formn sets the generated
 `id` on the `president` instance.
 
@@ -75,7 +75,7 @@ primary key is generated (an auto-incrementing int), Formn sets the generated
 
 Here's the full example, which can be found in the `formn-example` repository
 under
-[src/create/create-person.ts](https://github.com/benbotto/formn-example/blob/1.3.0/src/create/create-person.ts).
+[src/create/create-person.ts](https://github.com/benbotto/formn-example/blob/master/src/create/create-person.ts).
 
 ```typescript
 import { inspect } from 'util';

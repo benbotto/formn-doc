@@ -49,9 +49,9 @@ formn g src/entity/
 
 Assuming you've been following along with the tutorial, running the above
 command will generate two model classes:
-[person.entity.ts](https://github.com/benbotto/formn-example/blob/1.2.0/src/entity/person.entity.ts)
+[person.entity.ts](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 and
-[phone-number.entity.ts](https://github.com/benbotto/formn-example/blob/1.2.0/src/entity/phone-number.entity.ts).
+[phone-number.entity.ts](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts).
 
 ### Customizing Generated Models
 

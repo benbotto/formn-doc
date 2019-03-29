@@ -60,5 +60,5 @@ applications need to connect to multiple databases, so a `connections.json`
 file can define an array of connection details.
 
 The two files referenced above can be found in the formn-example repository:
-[connections.env.json](https://github.com/benbotto/formn-example/blob/1.1.0/connections.env.json);
-[read-connections-env.ts](https://github.com/benbotto/formn-example/blob/1.1.0/src/connection/read-connections-env.ts).
+[connections.env.json](https://github.com/benbotto/formn-example/blob/master/connections.env.json);
+[read-connections-env.ts](https://github.com/benbotto/formn-example/blob/master/src/connection/read-connections-env.ts).

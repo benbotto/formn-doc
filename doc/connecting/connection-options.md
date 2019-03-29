@@ -26,5 +26,5 @@ Here's an example `connections.json` file.
 ```
 
 The above JSON object was taken from the formn-example repository.  See
-[connections.json](https://github.com/benbotto/formn-example/blob/1.0.0/connections.json).
+[connections.json](https://github.com/benbotto/formn-example/blob/master/connections.json).
 

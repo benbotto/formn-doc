@@ -59,7 +59,7 @@ validator
 ### Column Metadata
 
 Back in the [Models](../models/) section, we defined a
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.3.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 class and decorated each property with the
 [Column](../../api-doc/latest/globals.html#column) decorator.
 [Column](../../api-doc/latest/globals.html#column) takes a

@@ -16,7 +16,7 @@ section.  It has more detailed documentation.
 ## Delete a PhoneNumber Instance
 
 Deleting a record by id is simple.  Below we'll delete a single
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.12.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 record.
 
 ```typescript
@@ -36,7 +36,7 @@ await query.execute();
 ```
 
 First, we instantiate a
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.12.0/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 and set the `id` to 1.  Then we call
 [DataContext.delete](../../api-doc/latest/classes/datacontext.html#delete),
 supplying two parameters:
@@ -59,7 +59,7 @@ Note that if there is no record with an `id` of 1, then an error is raised.
 ### Full Example
 
 The code discussed above is in the formn-example repository under
-[src/delete/delete-phone-number.ts](https://github.com/benbotto/formn-example/blob/1.12.0/src/delete/delete-phone-number.ts).
+[src/delete/delete-phone-number.ts](https://github.com/benbotto/formn-example/blob/master/src/delete/delete-phone-number.ts).
 It's also printed below for convenience.
 
 ```typescript

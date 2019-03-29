@@ -46,7 +46,7 @@ provides these basic comparison functions.
 In a nutshell, you build a condition, then pass the result to the
 [FromAdapter.where](../../api-doc/latest/classes/fromadapter.html#where)
 method.  For example, if we wanted to find all
-[Person](https://github.com/benbotto/formn-example/blob/1.8.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records with a `firstName` of "Joe," we would use the
 [eq](../../api-doc/latest/classes/conditionbuilder.html#eq) method.
 
@@ -78,7 +78,7 @@ Conditions can be combined using the
 [and](../../api-doc/latest/classes/conditionbuilder.html#and) and
 [or](../../api-doc/latest/classes/conditionbuilder.html#or) methods.  Let's say
 we want to find all
-[Person](https://github.com/benbotto/formn-example/blob/1.8.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records that have a "j" in the first or last name.
 
 ```typescript
@@ -191,7 +191,7 @@ an API, or build complex conditions on the fly.
 ### Full Example
 
 You can see the above example in the formn-example repository under
-[src/retrieve/conditions.ts](https://github.com/benbotto/formn-example/blob/1.8.0/src/retrieve/conditions.ts).
+[src/retrieve/conditions.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/conditions.ts).
 
 ```typescript
 import { inspect } from 'util';

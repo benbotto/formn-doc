@@ -96,7 +96,7 @@ have at least an `affectedRows` property describing how many rows were updated.
 ### Full Example
 
 The example presented above is located under
-[src/update/batch-update-mobile-numbers.ts](https://github.com/benbotto/formn-example/blob/1.11.0/src/update/batch-update-mobile-numbers.ts)
+[src/update/batch-update-mobile-numbers.ts](https://github.com/benbotto/formn-example/blob/master/src/update/batch-update-mobile-numbers.ts)
 in the formn-example repository.  Run it with `ts-node`.
 
 ```

@@ -38,9 +38,9 @@ and a join.
 In the [example database](../getting-started/tutorial-database-setup.html), we
 defined `people` and `phone_numbers` tables, along with [models](../models/)
 for each.  Now let's say we want to delete all the
-[PhoneNumber](https://github.com/benbotto/formn-example/blob/1.13.1/src/entity/phone-number.entity.ts)
+[PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 records associated with a
-[Person](https://github.com/benbotto/formn-example/blob/1.13.1/src/entity/person.entity.ts),
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts),
 and we want to identify the person by `firstName` and `lastName`.  We'll
 delete from the `phone_numbers` table, join in `people`, and set an
 appropriate where clause.  If you're not familiar with where conditions or
@@ -87,7 +87,7 @@ number of deleted rows.
 
 The full code presented above can be found in the formn-example repository
 under
-[src/delete/delete-phone-numbers-for-person.ts](https://github.com/benbotto/formn-example/blob/1.13.1/src/delete/delete-phone-numbers-for-person.ts).
+[src/delete/delete-phone-numbers-for-person.ts](https://github.com/benbotto/formn-example/blob/master/src/delete/delete-phone-numbers-for-person.ts).
 
 ```typescript
 import { inspect } from 'util';

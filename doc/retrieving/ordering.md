@@ -15,7 +15,7 @@ to sort the query.  The method takes one or more objects, each with
 2. a `dir` (direction) that is one of `ASC` or `DESC`.
 
 For example, to sort
-[Person](https://github.com/benbotto/formn-example/blob/1.6.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records by `firstName` then `lastName`:
 
 ```typescript
@@ -41,7 +41,7 @@ const query: Select<Person> = dataContext
 ### Full Example
 
 You can find a full example in the formn-example repository.  It's under
-[src/retrieve/order.ts](https://github.com/benbotto/formn-example/blob/1.6.0/src/retrieve/order.ts).
+[src/retrieve/order.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/order.ts).
 
 ```typescript
 import { inspect } from 'util';

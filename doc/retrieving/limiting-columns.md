@@ -8,7 +8,7 @@ nav_order: 2
 # Limiting Columns
 
 In the [last section](./basic-retrieval.html) we pulled all 
-[Person](https://github.com/benbotto/formn-example/blob/1.5.0/src/entity/person.entity.ts)
+[Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records from the database, and we included all properties/columns in the query.  We can
 limit the selected properties/columns using the
 [FromAdapter.select](../../api-doc/latest/classes/fromadapter.html#select)
@@ -42,7 +42,7 @@ A few notes about the above query.
 ### Full Example
 
 Here's a full example, which can be found in the formn-example repository under
-[src/retrieve/limit-columns.ts](https://github.com/benbotto/formn-example/blob/1.5.0/src/retrieve/limit-columns.ts).
+[src/retrieve/limit-columns.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/limit-columns.ts).
 
 ```typescript
 import { inspect } from 'util';
