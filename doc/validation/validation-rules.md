@@ -203,7 +203,7 @@ npx ts-node src/validation/insert/generated-column-defined.ts
 ```
 
 Here's the output, which is an `Error` of type
-[ValidationErrorList](https://github.com/benbotto/bsy-error/blob/develop/src/error/ValidationErrorList.ts).
+[ValidationErrorList](https://github.com/benbotto/bsy-error/blob/master/src/error/ValidationErrorList.ts).
 
 ```
 {
