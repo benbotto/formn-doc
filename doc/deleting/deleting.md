@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Deleting
-nav_order: 9
+nav_order: 10
 has_children: true
 permalink: /doc/deleting/
 ---
