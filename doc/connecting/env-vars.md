@@ -11,7 +11,7 @@ Formn provides a helper class,
 [ConnectionsFileReader](../../api-doc/latest/classes/connectionsfilereader.html),
 that can be used to read and validate a `connections.json` file.  Its
 [readConnectionOptions](../../api-doc/latest/classes/connectionsfilereader.html#readconnectionoptions)
-method takes a path to a `connections.json` file, and returns an array of
+method takes a path to a `connections.json` file and returns an array of
 [ConnectionOptions](../../api-doc/latest/classes/connectionoptions.html).
 Because it's common to use environment variables to store database connection
 details, a `connections.json` file can be defined in such a way that some or

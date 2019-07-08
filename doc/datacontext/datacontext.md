@@ -24,7 +24,7 @@ commonly used.
 * [insert](../../api-doc/latest/classes/datacontext.html#insert): Insert a
   [model](../models/) into the database.
 * [from](../../api-doc/latest/classes/datacontext.html#from): Select **from**
-  the database, or batch update or delete records **from** the database.
+  the database, batch update, or batch delete records **from** the database.
 * [update](../../api-doc/latest/classes/datacontext.html#update): Update a 
   [model](../models/).
 * [delete](../../api-doc/latest/classes/datacontext.html#delete): Delete a 
