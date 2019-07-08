@@ -27,9 +27,10 @@ npm install --save mysql2 types/mysql2
 
 Formn is database first, meaning that you create your database schema first,
 and _then_ define entity model classes in TypeScript.  The Formn command-line
-interface (CLI) has a model generator that can be used to generate entity
-classes for you.  You can install the CLI locally or globally (the tutorials
-assume the latter).
+interface (CLI) can be used to run database migrations--making and manipulating
+tables and such.  The CLI also has a model generator that can be used to
+generate entity classes for you.  You can install the CLI locally or globally
+(the tutorials assume the latter).
 
 ```
 npm install -g formn-cli
