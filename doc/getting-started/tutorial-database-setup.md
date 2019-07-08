@@ -10,7 +10,10 @@ nav_order: 3
 All of the example scripts presented in this documentation work against a
 fictitious MySQL database that contains people and phone numbers.  If you would
 like to follow along, you should create a `formn_test_db` database on a local
-MySQL server.
+MySQL server.  For the sake of simplicity, the tutorial assumes that the
+database has a `formn-user` account with full access to the database.  In
+production systems, it's best to use a more restricted account (e.g. to limit
+the account to CRUD operations).
 
 ### Using Docker
 
@@ -39,37 +42,15 @@ First, create the database.
 CREATE DATABASE formn_test_db
 ```
 
-Then run the following SQL.  It creates a `formn-user` user, and initializes
-the `people` and `phone_numbers` tables.
+Then add a `formn-user` account with full access.
 
 ```sql
-GRANT SELECT, INSERT, UPDATE, DELETE
+GRANT ALL PRIVILEGES
   ON `formn_test_db`.* to 'formn-user'@'%'
   IDENTIFIED BY 'formn-password';
-
-CREATE TABLE people (
-  personID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  firstName VARCHAR(255),
-  lastName VARCHAR(255),
-  createdOn TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
-
-INSERT INTO people (firstName, lastName) VALUES ('Joe', 'Shmo');
-INSERT INTO people (firstName, lastName) VALUES ('Rand', 'AlThore');
-INSERT INTO people (firstName, lastName) VALUES ('Holly', 'Davis');
-INSERT INTO people (firstName, lastName) VALUES ('Jenny', 'Mather');
-
-CREATE TABLE phone_numbers (
-  phoneNumberID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  phoneNumber VARCHAR(255) NOT NULL,
-  type VARCHAR(255),
-  personID INT NOT NULL,
-
-  CONSTRAINT fk__phone_numbers__personID__people
-    FOREIGN KEY (personID) REFERENCES people(personID)
-    ON DELETE CASCADE);
-
-INSERT INTO phone_numbers (personID, phoneNumber, type) VALUES (1, '530-307-8810', 'mobile');
-INSERT INTO phone_numbers (personID, phoneNumber, type) VALUES (1, '916-200-1440', 'home');
-INSERT INTO phone_numbers (personID, phoneNumber, type) VALUES (1, '916-293-4667', 'office');
-INSERT INTO phone_numbers (personID, phoneNumber, type) VALUES (2, '666-451-4412', 'mobile');
 ```
+
+We'll create some tables and initialize some dummy data in a bit, but first off
+let's look at Formn's main interface to the database: the
+[DataContext](http://0.0.0.0:4000/doc/formn/5.x.x/api-doc/latest/classes/datacontext.html)
+class.
