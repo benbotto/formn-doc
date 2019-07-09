@@ -20,10 +20,9 @@ in the [next section](./relationships.html).
 
 ### Table
 
-Back in the [Getting Started](../getting-started/) section we [defined a
-`people`
-table](../getting-started/tutorial-database-setup.html#manual-initialization).
-Let's make a Formn model for that table.
+Back in the [Migrations](../migrations/) section we [created a `people`
+table](../migrations/create-a-people-table.html).  Let's make a Formn model for
+that table.
 
 ```typescript
 import { Table } from 'formn';
@@ -78,7 +77,7 @@ export class Person {
 
 ### Aliasing Column Names
 
-Database column names and Formn model property names can differ.  Just like we
+Database column names and model property names can differ.  Just like we
 aliased the `people` table as `Person`, in the above class the
 `people.personID` column has been aliased as `id`.  Behind the scenes, Formn
 will map `Person.id` to/from `people.personID`.
@@ -96,8 +95,7 @@ option is enabled.
 
 ### Max Length
 
-When we [defined the people
-table](../getting-started/tutorial-database-setup.html#manual-initialization),
+When we [created the people table](../migrations/create-a-people-table.html),
 we defined a maximum character length for the `firstName` and `lastName`
 columns.  That restriction is echoed above with the `maxLength` option, which
 is useful for [validation](../validation/) purposes.
