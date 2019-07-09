@@ -136,9 +136,9 @@ This class is mainly used internally by the above validators.  It could be
 useful in certain scenarios, such as making a custom model validator.
 
 1. The data type of each value is validated.
-  - For strings, the maximum length is validated.
-2. Values corresponding to non-nullable columns must not be `null`.
-3. Custom validation rules are applied, such as the `PhoneValidator` check
+2. For strings, the maximum length is validated.
+3. Values corresponding to non-nullable columns must not be `null`.
+4. Custom validation rules are applied, such as the `PhoneValidator` check
    described above.
 
 The following
