@@ -15,7 +15,7 @@ section.  It has more detailed documentation.
 
 ## Delete a PhoneNumber Instance
 
-Deleting a record by id is simple.  Below we'll delete a single
+Deleting a record by ID is simple.  Below we'll delete a single
 [PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 record.
 
