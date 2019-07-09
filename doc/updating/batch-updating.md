@@ -8,7 +8,7 @@ nav_order: 2
 # Batch Updating
 
 In the [previous section](./updating-a-model.html) we updated a single model by
-id.  While that's a common scenario, often there's a need to update a bunch of
+ID.  While that's a common scenario, often there's a need to update a bunch of
 records simultaneously based on some filter condition.
 
 If you look back at the [DataContext](../datacontext) section, you'll see that
