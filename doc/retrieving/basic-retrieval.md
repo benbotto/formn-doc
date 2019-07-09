@@ -23,11 +23,10 @@ sections.
 
 Let's say you want to select all
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
-records from the `people` table that we defined in the [Getting
-Started](../getting-started/tutorial-database-setup.html) section.  To do so,
-you would call the
+records from the `people` table that we defined in the
+[Migrations](../migrations/) section.  To do so, you would call the
 [FromAdapter.select](../../api-doc/latest/classes/fromadapter.html#select)
-method like so.
+method.
 
 ```typescript
 const query: Select<Person> = dataContext
