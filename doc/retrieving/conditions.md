@@ -60,7 +60,7 @@ const query: Select<Person> = dataContext
 // Resulting condition: WHERE   `p`.`firstName` = :myFirstName
 ```
 
-Or, if we wanted to find all people created after New Years, 2019.
+Or, if we wanted to find all people created after New Year's, 2019.
 
 ```typescript
 const query: Select<Person> = dataContext
