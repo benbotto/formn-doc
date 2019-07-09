@@ -7,7 +7,7 @@ nav_order: 2
 
 # Batch Deleting
 
-[Previously](./deleting-a-model.html) we covered deleting a single model by id.
+[Previously](./deleting-a-model.html) we covered deleting a single model by ID.
 We can also perform more complex, batch deletes using a where clause and
 optionally joining tables.
 
@@ -35,18 +35,17 @@ and a join.
 
 ### Batch Delete a Person's Phone Numbers
 
-In the [example database](../getting-started/tutorial-database-setup.html), we
-defined `people` and `phone_numbers` tables, along with [models](../models/)
-for each.  Now let's say we want to delete all the
+In the [example database](../migrations/) we defined `people` and
+`phone_numbers` tables along with [models](../models/) for each.  Now let's
+say we want to delete all the
 [PhoneNumber](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts)
 records associated with a
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts),
-and we want to identify the person by `firstName` and `lastName`.  We'll
-delete from the `phone_numbers` table, join in `people`, and set an
-appropriate where clause.  If you're not familiar with where conditions or
-joining, take a look at those sections:
-[Joining](../retrieving/joining.html);
-[Conditions](../retrieving/conditions.html).
+and we want to identify the person by `firstName` and `lastName`.  We'll delete
+from the `phone_numbers` table, join in `people`, and set an appropriate where
+clause.  If you're not familiar with where conditions or joining, take a look
+at those sections: [Conditions](../retrieving/conditions.html);
+[Joining](../retrieving/joining.html).
 
 ```typescript
 // Used for building the delete's where clause.
