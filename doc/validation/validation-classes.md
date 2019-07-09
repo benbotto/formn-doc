@@ -24,7 +24,7 @@ with two arguments.
 1. An object to validate.  This can be a plain JavaScript object, like an
    object from an API request, or an instance of a class.
 2. The constructor of a
-   @[Table](../../api-doc/latest/globals.html#table)-decorated class, a.k.a. an
+   [Table](../../api-doc/latest/globals.html#table)-decorated class, a.k.a. an
    "Entity."  The first parameter--the object--will be checked against the
    Entity's metadata to ensure that it's acceptable for the requested CRUD
    operation.
