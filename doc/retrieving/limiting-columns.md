@@ -26,22 +26,22 @@ A few notes about the above query.
   reference `People` using a short-hand notation in other parts of the query,
   like when limiting the selected columns.  It also lets us disambiguate in
   cases where the same table is joined in multiple times.  Aliasing is
-  optional; if no alias is provided then the table will be referenced by
+  optional.  If no alias is provided then the table will be referenced by
   _table_ name (`people` in this case).
-* The primary key must be selected for every table referenced in the query,
-  including any joined-in tables.  Here we've included `p.id` as part of the
-  `select`.
+* The primary key column(s) must be selected for every table referenced in the
+  query, including any joined-in tables.  Here we've included `p.id` as part of
+  the `select`.
 * Each selected column takes the form `<table-alias>.<property-name>`.  Recall
-  that in our [example
-  database](../getting-started/tutorial-database-setup.html) the primary key of
-  the `people` table is `personID`, and in the
+  that in our [example database](../migrations/) the primary key of the
+  `people` table is `personID`, and in the
   [models](../models/basic-model-decorators.html) section we opted to associate
   that column with the `Person.id` property.  So, in the above query, we select
   `p.id`, not `p.personID`.
 
 ### Full Example
 
-Here's a full example, which can be found in the formn-example repository under
+Here's a full example, which can be found in the
+[formn-example](https://github.com/benbotto/formn-example/) repository under
 [src/retrieve/limit-columns.ts](https://github.com/benbotto/formn-example/blob/master/src/retrieve/limit-columns.ts).
 
 ```typescript
