@@ -38,7 +38,7 @@ const query: Select<Person> = dataContext
   .select();
 ```
 
-That says to join from `people` to `phone_numbers`, using the relationship
+That says to join from `people` to `phone_numbers` using the relationship
 defined on the `p.phoneNumbers` property.  You'll get back all
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 records, and each
