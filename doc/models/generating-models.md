@@ -37,7 +37,7 @@ formn generate --help
 Options include:
 
 * `--connections-file`, aliased as `-c`.  The path to a `connections.json`
-  file, which defaults to `./connections.json`
+  file, which defaults to `./connections.json`.
 * `--flavor`, aliased `-f`.  The database type, which defaults to `mysql`.
 
 The `generate` command requires one argument: the path where model classes
