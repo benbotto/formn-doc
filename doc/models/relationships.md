@@ -14,10 +14,9 @@ reference other models using one of Formn's relationship decorators,
 [OneToOne](../../api-doc/latest/globals.html#onetoone), or
 [ManyToOne](../../api-doc/latest/globals.html#manytoone).
 
-In the example database [we
-created](../getting-started/tutorial-database-setup.html#manual-initialization),
-there's a one-to-many relationship between `people` and `phone_numbers`.  Let's
-create a `PhoneNumber` class, then relate that class to `Person`.
+In the example database [we created](../migrations/), there's a one-to-many
+relationship between `people` and `phone_numbers`.  Let's create a
+`PhoneNumber` class, then relate that class to `Person`.
 
 ```typescript
 import { Table, Column } from 'formn';
