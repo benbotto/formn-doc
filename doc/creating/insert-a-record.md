@@ -15,9 +15,8 @@ method is used to insert a model instance into the database.
 
 ### Insert a Person Instance
 
-Back in the [Getting Started](../getting-started/) section we [set up an
-example database](../getting-started/tutorial-database-setup.html).  Then, in
-the [Models](../models/) section, we defined a
+Back in the [Migrations](../migrations/) section we set up an example database.
+Then, in the [Models](../models/) section, we defined a
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
 entity class.  Let's walk through the process of inserting a
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts).
