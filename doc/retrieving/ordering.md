@@ -119,7 +119,7 @@ ORDER BY `p`.`firstName` ASC, `p`.`lastName` ASC
   Person {
     id: 2,
     firstName: 'Rand',
-    lastName: 'AlThore'
+    lastName: 'al\'Thor'
   }
 ]
 ```

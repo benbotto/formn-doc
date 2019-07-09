@@ -158,7 +158,7 @@ LEFT OUTER JOIN `phone_numbers` AS `pn` ON `p`.`personID` = `pn`.`personID`
     id: 2,
     createdOn: 2019-02-13T03:37:23.000Z,
     firstName: 'Rand',
-    lastName: 'AlThore',
+    lastName: 'al\'Thor',
     phoneNumbers: [
       PhoneNumber {
         id: 4,

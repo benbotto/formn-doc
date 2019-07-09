@@ -125,7 +125,7 @@ FROM    `people` AS `people`
     id: 2,
     createdOn: 2019-01-29T02:57:06.000Z,
     firstName: 'Rand',
-    lastName: 'AlThore'
+    lastName: 'al\'Thor'
   },
   Person {
     id: 3,
