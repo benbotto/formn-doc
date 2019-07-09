@@ -12,12 +12,12 @@ predicates (the ON condition) are derived.  That is, Formn infers the join
 conditions based on the decorators defined on the models.  But sometimes that's
 not enough, and a custom join predicate is needed.  The
 [ConditionBuilder](../../api-doc/latest/classes/conditionbuilder.html) class
-that was covered in the [conditions](./conditions.html) section can be used to
+that was covered in the [Conditions](./conditions.html) section can be used to
 build a custom join condition.
 
 Let's say we want to pull all
 [Person](https://github.com/benbotto/formn-example/blob/master/src/entity/person.entity.ts)
-records, along with their mobile
+records along with their mobile
 [PhoneNumbers](https://github.com/benbotto/formn-example/blob/master/src/entity/phone-number.entity.ts),
 if any.
 
