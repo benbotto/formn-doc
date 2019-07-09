@@ -34,10 +34,10 @@ along with the
 [Joining](../retrieving/joining.html) and [Batch
 Deleting](../deleting/batch-deleting.html).)
 
-When we created the [example
-database](../getting-started/tutorial-database-setup.html), we added `type`
-column to the `phone_numbers` table.  Let's change all "mobile" phone numbers
-to "cell."
+When we created the [`phone_numbers`
+table](../migrations/create-a-phone-numbers-table.html), we added `type` column
+to the `phone_numbers` table.  Let's change all "mobile" phone numbers to
+"cell."
 
 ```typescript
 // Used for building the update statement's where clause.
