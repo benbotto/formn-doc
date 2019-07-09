@@ -24,7 +24,8 @@ function
 1. will be called with a new
    [DataContext](../../api-doc/latest/classes/datacontext.html) instance that's
    bound to a single connection, and
-2. must return a `Promise`.
+2. must return a
+   [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
 ```typescript
 await dataContext
@@ -37,10 +38,13 @@ Above, an [async
 function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 is supplied to
 [DataContext.beginTransaction](../../api-doc/latest/classes/datacontext.html#begintransaction),
-so an implicit `Promise` is returned.  If the returned `Promise` is rejected
-(i.e. if an exception is raised) then the transaction will be automatically
-rolled back; otherwise, the transaction will be automatically committed.
-Transactions can also be be rolled back manually using the
+so an implicit
+[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+is returned.  If the returned
+[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+is rejected (i.e. if an exception is raised) then the transaction will be
+automatically rolled back; otherwise, the transaction will be automatically
+committed.  Transactions can also be be rolled back manually using the
 [DataContext.rollbackTransaction](../../api-doc/latest/classes/mysqltransactionaldatacontext.html#rollbacktransaction)
 method.
 
