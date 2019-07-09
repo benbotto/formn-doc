@@ -30,8 +30,10 @@ with two arguments.
    operation.
 
 The [validate](../../api-doc/latest/classes/modelvalidator.html#validate)
-method returns a `Promise` that is resolved if the object is valid, or
-otherwise rejected with an error describing why the object is invalid.
+method returns a
+[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+that is resolved if the object is valid, or otherwise rejected with an error
+describing why the object is invalid.
 
 In code terms, here's how validation looks.
 
