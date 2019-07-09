@@ -9,7 +9,7 @@ nav_order: 1
 
 A common scenario is to delete a single model by ID.  That's done using the
 [DataContext.delete](../../api-doc/latest/classes/datacontext.html#delete)
-method.  The usage is pretty much identical to updating a model by id, so be
+method.  The usage is pretty much identical to updating a model by ID, so be
 sure to review the [Updating a Model](../updating/updating-a-model.html)
 section.  It has more detailed documentation.
 
